@@ -6,8 +6,7 @@
 
 class Logic{
     public:
-    void play(); //pomyslec czy moze byc static
-    //method to start game, manages players' moves and checks end of game
+    void play(); //method to start game, manages players' moves and checks end of game
     
     void move(int position, const Player& player); //method makes the player's move from position (first argument)
     

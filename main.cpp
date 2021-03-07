@@ -11,6 +11,5 @@ It is possible for the game to end in a draw.*/
 #include"Game.h"
 
 int main() {
-  //Game newGame;
   Game::startGame();
 } 

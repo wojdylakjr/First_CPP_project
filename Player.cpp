@@ -6,7 +6,7 @@ Player::Player() { _numberOfPlayer = _number++; }
 
 int Player::choosePosition() const {
   int position = 0;
-  std::cout << "Player " << getNumberOfPlayer() << " chose position: ";
+  std::cout << "Player " << getNumberOfPlayer() << " chooses position: ";
   std::cin >> position;
   while (position < 0 || position > SIZE) {
     std::cout << "Enter number in range 0 - "<< SIZE << std::endl;

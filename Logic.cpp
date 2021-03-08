@@ -167,8 +167,8 @@ void Logic::endOfGame() {
 
   if (_board.getMancala(_player1) > _board.getMancala(_player2)) {
     std::cout << "Player 1 won the game!" << std::endl;
-  } else if (_board.getMancala(_player1) > _board.getMancala(_player2)) {
-    std::cout << "Player 1 won the game!" << std::endl;
+  } else if (_board.getMancala(_player1) < _board.getMancala(_player2)) {
+    std::cout << "Player 2 won the game!" << std::endl;
   } else {
     std::cout << "Game ends with draw!" << std::endl;
   }

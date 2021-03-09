@@ -14,7 +14,7 @@ class Logic{
    
     void cyclicAdd(int startIndex, int amount, const Player& player);//method manages, what to do when the rocks should land in opponent's array of holes
     
-    bool continueGame(); //checks if in tha array of holes is not empty, if it is it means end of game
+    bool continueGame(); //checks if in tha array of holes is not empty
     
     void lastHoleRule(int index,const Player& player); //method manages the rule, when the last rock lands in empty hole in player's array of holes
     

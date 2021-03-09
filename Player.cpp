@@ -9,7 +9,7 @@ int Player::choosePosition() const {
   std::cout << "Player " << getNumberOfPlayer() << " chooses position: ";
   std::cin >> position;
   while (std::cin.fail() || (position <= 0 || position > SIZE)) {
-    std::cout << "Enter number in range 0 - " << SIZE << std::endl;
+    std::cout << "Enter number in range 1 - " << SIZE << std::endl;
     std::cin.clear();
     std::cin.ignore(1000, '\n');
     std::cin >> position;

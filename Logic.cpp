@@ -5,7 +5,7 @@ void Logic::play() {
     _board.showBoard();
     move(_player1.choosePosition(), _player1);
 
-    if (continueGame()) { //it is necesarry when first player move ends game
+    if (continueGame()) { 
       _board.showBoard();
       move(_player2.choosePosition(), _player2);
     }
@@ -46,7 +46,7 @@ int Logic::increaseAmount(int startIndex, int amount, const Player &player) {
     }
 
     if (currentRocks == 0 && _board.getAmountInHole(i - 1, player) == 1 &&
-        player.getNumberOfPlayer() == _currentPlayer) { //checks the lastHoleRules
+        player.getNumberOfPlayer() == _currentPlayer) {
       lastHoleRule(i - 1, player);
     }
 
@@ -60,7 +60,7 @@ int Logic::increaseAmount(int startIndex, int amount, const Player &player) {
     }
 
     if (currentRocks == 0 && _board.getAmountInHole(i + 1, player) == 1 &&
-        player.getNumberOfPlayer() == _currentPlayer) { //checks the lastHoleRules
+        player.getNumberOfPlayer() == _currentPlayer) { 
       lastHoleRule(i + 1, player);
     }
   }
@@ -85,16 +85,16 @@ void Logic::cyclicAdd(int startIndex, int amount, const Player &player) {
   }
 
   if (currentRocks > 1 && player.getNumberOfPlayer() == _currentPlayer) { 
-    currentRocks = _board.incrementMancala(currentRocks, player); //just add to mancala
+    currentRocks = _board.incrementMancala(currentRocks, player); 
   }
 
   if (currentRocks > 0) { //after adding to one player array and mancala, we starting adding to opponent array
     if (player.getNumberOfPlayer() == 1) {
       cyclicAdd(SIZE + 1, currentRocks,
-                _player2); // starting adding tho hole with index SIZE
+                _player2); // starting adding tho hole with board index: SIZE
     } else {
       cyclicAdd(0, currentRocks,
-                _player1); // starting adding tho hole with index 1
+                _player1); // starting adding tho hole with board index 1
     }
   }
 }
@@ -118,9 +118,9 @@ void Logic::lastHoleRule(int index, const Player &player) {
 
   if (player.getNumberOfPlayer() == 1 &&
       _board.getAmountInHole(index, _player2) != 0) {
-    _board.setAmountInHole(index, player, 0); //set amount to 0 in own hole
+    _board.setAmountInHole(index, player, 0); 
     value = _board.getAmountInHole(index, _player2); //get amount in opposite index in opponent array
-    _board.setAmountInHole(index, _player2, 0); //set opponent hole to 0
+    _board.setAmountInHole(index, _player2, 0); 
     _board.addToMancala(value + 1, player); // add value + 1 from own hole to own mancala
   } 
   else if (player.getNumberOfPlayer() == 2 &&
@@ -167,8 +167,8 @@ void Logic::endOfGame() {
 
   if (_board.getMancala(_player1) > _board.getMancala(_player2)) {
     std::cout << "Player 1 won the game!" << std::endl;
-  } else if (_board.getMancala(_player1) > _board.getMancala(_player2)) {
-    std::cout << "Player 1 won the game!" << std::endl;
+  } else if (_board.getMancala(_player1) < _board.getMancala(_player2)) {
+    std::cout << "Player 2 won the game!" << std::endl;
   } else {
     std::cout << "Game ends with draw!" << std::endl;
   }

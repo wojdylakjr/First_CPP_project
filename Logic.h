@@ -8,17 +8,17 @@ class Logic{
     public:
     void play(); //method to start game, manages players' moves and checks end of game
     
-    void move(int position, const Player& player); //method makes the player's move from position (first argument)
+    void move(int position, const Player& player); //method makes the player's move from position 
     
     int increaseAmount(int startIndex, int amount, const Player& player);//method as argument takes startIndex from which starts increasing amount in holes untill variable amount = 0 or index is more than 6, returns current available for player amount of rocks
    
     void cyclicAdd(int startIndex, int amount, const Player& player);//method manages, what to do when the rocks should land in opponent's array of holes
     
-    bool continueGame(); //checks if in tha array of holes is not empty, if it is it means end of game
+    bool continueGame(); //checks if in tha array of holes is not empty
     
     void lastHoleRule(int index,const Player& player); //method manages the rule, when the last rock lands in empty hole in player's array of holes
     
-    bool isArrayEmpty(Hole* arr) const; //method iterete to check if the array is empty
+    bool isArrayEmpty(Hole* arr) const; 
     
     void endOfGame(); //method manages the rule of end of game
 
@@ -28,5 +28,5 @@ class Logic{
     Player _player1;
     Player _player2;
     Board _board;
-    int _currentPlayer; //variable to set which player is making move
+    int _currentPlayer;
 };

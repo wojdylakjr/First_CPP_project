@@ -1,0 +1,10 @@
+cmake_minimum_required (VERSION 2.6)
+project (Kalaha CXX)
+
+add_executable(Kalaha main.cpp Board.cpp Game.cpp Hole.cpp Logic.cpp Mancala.cpp Player.cpp Board.h Game.h Hole.h Logic.h Mancala.h Player.h)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}-DLIB_TEST -Wall -pedantic")
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG}")
+set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG -O2")
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
